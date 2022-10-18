@@ -5,7 +5,7 @@ console.log("Start")
 function importantAction(username){
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(`Subscribe to ${username}`);
+            reject(`Subscribe to ${username}`);
         },1000);
     })
 }
@@ -21,7 +21,7 @@ function likeTheVideo(video){
 function shareTheVideo(video){
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(`Share the ${video} video`)
+            reject(`Share the ${video} video`)
         }, 500);
     })
 }
@@ -42,5 +42,5 @@ console.log("Stop");
 Output:
     Start
     Stop
-    Share the Javascript Interview Questions video
+    Error: Promises failed AggregateError: All promises were rejected
 */
