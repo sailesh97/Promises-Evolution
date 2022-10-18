@@ -13,7 +13,7 @@ function importantAction(username){
 function likeTheVideo(video){
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(`Like the ${video} video`)
+            reject(`Like the ${video} video`)
         }, 100);
     })
 }
@@ -42,5 +42,5 @@ console.log("Stop");
 Output:
     Start
     Stop
-    {message1: 'Subscribe to Roadside Coder', message2: 'Like the Javascript Interview Questions video', message3: 'Share the Javascript Interview Questions video'}
+    Uncaught (in promise) Like the Javascript Interview Questions video    
 */
