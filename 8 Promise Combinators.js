@@ -26,7 +26,7 @@ function shareTheVideo(video){
     })
 }
 
-Promise.race([
+Promise.allSettled([
     importantAction("Roadside Coder"),
     likeTheVideo("Javascript Interview Questions"), 
     shareTheVideo("Javascript Interview Questions")
@@ -42,5 +42,15 @@ console.log("Stop");
 Output:
     Start
     Stop
-    Error: Promises failed Like the Javascript Interview Questions video
+    [
+        { status: 'fulfilled', value: 'Subscribe to Roadside Coder' },
+        {
+            status: 'rejected',
+            reason: 'Like the Javascript Interview Questions video'
+        },
+        {
+            status: 'fulfilled',
+            value: 'Share the Javascript Interview Questions video'
+        }
+    ]
 */
