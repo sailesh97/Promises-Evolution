@@ -14,7 +14,7 @@ function likeTheVideo(video){
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             reject(`Like the ${video} video`)
-        }, 2000);
+        }, 100);
     })
 }
 
@@ -42,5 +42,5 @@ console.log("Stop");
 Output:
     Start
     Stop
-    Share the Javascript Interview Questions video
+    Error: Promises failed Like the Javascript Interview Questions video
 */
