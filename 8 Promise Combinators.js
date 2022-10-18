@@ -13,7 +13,7 @@ function importantAction(username){
 function likeTheVideo(video){
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(`Like the ${video} video`)
+            reject(`Like the ${video} video`)
         }, 1000);
     })
 }
@@ -33,7 +33,7 @@ Promise.all([
 ]).then(res => {
     console.log(res)
 }).catch(err => {
-    console.log(err);
+    console.log("Error: Promises failed", err);
 })
 
 console.log("Stop");
@@ -42,9 +42,5 @@ console.log("Stop");
 Output:
     Start
     Stop
-    [
-    'Subscribe to Roadside Coder',
-    'Like the Javascript Interview Questions video',
-    'Share the Javascript Interview Questions video'
-    ]
+    Error: Promises failed Like the Javascript Interview Questions video
 */
