@@ -12,7 +12,7 @@ function asynch(){
     console.log('Start')
     setTimeout(() => {
         console.log("Subscribe to Roadside coder")
-    }, 3000)
+    }, 3000) // Same output even if 0ms
     console.log('End')
     console.log("****** Async code end ********")
 }
