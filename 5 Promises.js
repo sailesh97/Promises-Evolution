@@ -8,6 +8,8 @@ const sub = new Promise((resolve2, reject2) => {
     }, 2000);
 });
 
+console.log(sub)
+
 sub.then((res) => {
     console.log(res)
 }).catch((err) => {
