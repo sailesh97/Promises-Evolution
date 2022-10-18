@@ -27,11 +27,16 @@ function shareTheVideo(video){
 }
 
 const result = async () => {
-    const message1 = await importantAction("Roadside Coder");
-    const message2 = await likeTheVideo("Javascript Interview Questions");
-    const message3 = await shareTheVideo("Javascript Interview Questions");
-
-    console.log({message1, message2, message3})
+    try{
+        const message1 = await importantAction("Roadside Coder");
+        console.log(message1)
+        const message2 = await likeTheVideo("Javascript Interview Questions");
+        console.log(message2)
+        const message3 = await shareTheVideo("Javascript Interview Questions");
+        console.log(message3)
+    } catch(error){
+        console.error("Promises Failed", error);
+    }
 }
 
 result();
@@ -42,5 +47,9 @@ console.log("Stop");
 Output:
     Start
     Stop
-    Uncaught (in promise) Like the Javascript Interview Questions video    
+    Subscribe to Roadside Coder
+    Promises Failed Like the Javascript Interview Questions video
+        result @ 9 async-await.js:38
+        await in result (async)
+        (anonymous) @ 9 async-await.js:42
 */
