@@ -26,7 +26,7 @@ function shareTheVideo(video){
     })
 }
 
-Promise.allSettled([
+Promise.any([
     importantAction("Roadside Coder"),
     likeTheVideo("Javascript Interview Questions"), 
     shareTheVideo("Javascript Interview Questions")
@@ -42,15 +42,5 @@ console.log("Stop");
 Output:
     Start
     Stop
-    [
-        { status: 'fulfilled', value: 'Subscribe to Roadside Coder' },
-        {
-            status: 'rejected',
-            reason: 'Like the Javascript Interview Questions video'
-        },
-        {
-            status: 'fulfilled',
-            value: 'Share the Javascript Interview Questions video'
-        }
-    ]
+    Share the Javascript Interview Questions video
 */
