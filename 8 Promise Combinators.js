@@ -6,7 +6,7 @@ function importantAction(username){
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(`Subscribe to ${username}`);
-        },0);
+        },1000);
     })
 }
 
@@ -14,7 +14,7 @@ function likeTheVideo(video){
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             reject(`Like the ${video} video`)
-        }, 1000);
+        }, 2000);
     })
 }
 
@@ -22,7 +22,7 @@ function shareTheVideo(video){
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(`Share the ${video} video`)
-        }, 1000);
+        }, 500);
     })
 }
 
@@ -42,5 +42,5 @@ console.log("Stop");
 Output:
     Start
     Stop
-    Subscribe to Roadside Coder
+    Share the Javascript Interview Questions video
 */
