@@ -27,17 +27,19 @@ function shareTheVideo(video){
 }
 
 
-// Promise HELL
+// Returning from Promise creates a brand new Promise. Which we can consume again using .then(). Cretes a chain of promise
 
 importantAction("Roadside Coder")
     .then((res) => {
         console.log(res);
-        likeTheVideo("Javascript Interview Questions").then((res) => {
-            console.log(res);
-            shareTheVideo("Javascript Interview Questions").then((res) => {
-                console.log(res);
-            })
-        }) 
+        return likeTheVideo("Javascript Interview Questions"); 
+    })
+    .then((res) => {
+        console.log(res);
+        return shareTheVideo("Javascript Interview Questions");
+    })
+    .then((res) => {
+        console.log(res);
     })
     .catch((err) => console.log(err));
 
