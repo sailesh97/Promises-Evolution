@@ -17,7 +17,7 @@ function likeTheVideo(video){
 function shareTheVideo(video){
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(`Share the ${video} video`)
+            reject(`Share the ${video} video`)
         }, 500);
     })
 }
@@ -51,7 +51,7 @@ Promise.allPolyfill([
     shareTheVideo('Javascript Interview Questions')
 ])
     .then(res => console.log(res))
-    .catch(err => console.log(err))
+    .catch(err => console.error("Failed:",err))
 
 
 Promise.all([
@@ -59,6 +59,5 @@ Promise.all([
     likeTheVideo('Javascript Interview Questions'),
     shareTheVideo('Javascript Interview Questions')
 ])
-.then(res => console.log(res))
-.catch(err => console.log(err))
-    
+    .then(res => console.log(res))
+    .catch(err => console.error("Failed:",err))    
