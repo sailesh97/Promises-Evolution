@@ -58,3 +58,21 @@ examplePromise
         console.log(res);
     })
     .catch(err => console.error(err));
+
+
+
+PromisePolyfill.resolve = (val) => {
+    return new PromisePolyfill(function executor(resolve, reject){
+        resolve(val);
+    });
+};
+
+PromisePolyfill.reject = val => {
+    return new PromisePolyfill(function executor(resolve, reject){
+        reject(val);
+    })
+}
+
+const sub = PromisePolyfill.resolve("Subscribe to Roadside Coder");
+sub.then(res => console.log(res))
+.catch(err => console.log(err));
