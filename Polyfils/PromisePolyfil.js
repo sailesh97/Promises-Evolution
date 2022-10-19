@@ -23,11 +23,13 @@ function PromisePolyfill(executor){
 }
 
 const examplePromise = new PromisePolyfill((resolve, reject) => {
-    setTimeout(() => {
-        resolve(2);
-    }, 1000);
+    // setTimeout(() => {
+        resolve(2); // Won't work for sync operations here. Will fix in next commit
+    // }, 1000);
 });
 
-examplePromise.then(() => {
-    console.log(res);
-}).catch(err => console.log(err));
+examplePromise
+    .then(() => {
+        console.log(res);
+    })
+    .catch(err => console.log(err));
