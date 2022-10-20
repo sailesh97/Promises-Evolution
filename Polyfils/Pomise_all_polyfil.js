@@ -61,3 +61,13 @@ Promise.all([
 ])
     .then(res => console.log(res))
     .catch(err => console.error("Failed:",err))    
+
+/**
+ * Output:
+ *  Failed: Share the Javascript Interview Questions video
+        (anonymous) @ Pomise_all_polyfil.js:54
+        Promise.catch (async)
+        (anonymous) @ Pomise_all_polyfil.js:54
+
+ Failed: Share the Javascript Interview Questions video
+ */
