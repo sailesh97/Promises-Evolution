@@ -1,7 +1,7 @@
 function importantAction(username){
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(`Subscribe to ${username}`);
+            reject(`Subscribe to ${username}`);
         },1000);
     })
 }
@@ -63,4 +63,13 @@ Promise.any([
  * Output:
  * Like the Javascript Interview Questions video
    Like the Javascript Interview Questions video
+ */
+
+/** Definition:
+ * Promise.any() takes an iterable of Promise objects. 
+ * It returns a single promise that fulfills as soon as any of the promises in the iterable fulfills, 
+ * with the value of the fulfilled promise.
+ * If no promises in the iterable fulfill (if all of the given promises are rejected), 
+ * then the returned promise is rejected with an AggregateError, 
+ * a new subclass of Error that groups together individual errors.
  */

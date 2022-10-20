@@ -28,6 +28,7 @@ function promiseRace(promisesArray) {
         promise
           .then(resolve) // resolve outer promise, as and when any of the input promise resolves
           .catch(reject); // reject outer promise, as and when any of the input promise rejects
+          // attached (resolve of outer promise) to each promise of promise array. Whenever any of promise of promiseArray resolved or rejected; resolve the outer promise, without waiting for (any other promise to resolve/reject)
       });
     });
 }
@@ -53,3 +54,12 @@ Promise.race([
  *  Like the Javascript Interview Questions video
     Like the Javascript Interview Questions video
  */
+
+
+/**
+    * Definition:
+    * 
+    * The Promise.race() method returns a promise that fulfills or rejects 
+    * as soon as one of the promises in an iterable fulfills or rejects, 
+    * with the value or reason from that promise.
+    */

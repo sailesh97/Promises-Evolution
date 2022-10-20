@@ -24,8 +24,8 @@ function shareTheVideo(video){
 
 function allSettled(promises) {
     let mappedPromises = promises.map((p) => {
-      return p.then((value) => {
-          return {
+      return p.then((value) => { // returns new promise that gets returned from .then/.catch
+          return { // return inside .then or .catch returns a new promise
             status: 'fulfilled',
             value,
           };
@@ -37,7 +37,9 @@ function allSettled(promises) {
           };
         });
     });
-    return Promise.all(mappedPromises);
+    // all promises of promiseArray irrespective of it's resolved or rejected will return an object with status and value/reason key.
+    console.log('Mapped promise: ', mappedPromises); // Array of promises
+    return Promise.all(mappedPromises); 
 };
 
 allSettled([
@@ -87,4 +89,19 @@ Promise.allSettled([
             "reason": "Share the Javascript Interview Questions video"
         }
     ]
+ */
+
+
+/**
+ * Definition:
+ *  The Promise.allSettled() method returns a promise that fulfills 
+ * after all of the given promises have either fulfilled or rejected, 
+ * with an array of objects that each describes the outcome of each promise.
+
+    It is typically used when you have multiple asynchronous tasks 
+    that are not dependent on one another to complete successfully, 
+    or you'd always like to know the result of each promise.
+
+    In comparison, the Promise returned by Promise.all() may be more appropriate 
+    if the tasks are dependent on each other / if you'd like to immediately reject upon any of them rejecting.
  */

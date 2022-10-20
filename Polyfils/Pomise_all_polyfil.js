@@ -38,7 +38,7 @@ Promise.allPolyfill = (promiseArray) => {
                 pending--;
 
                 if(pending === 0){
-                    resolve(outputs)
+                    resolve(outputs); // This resolve is for outer promise, which means: Only resolve the outer promise, only when pending.length ie; you have consumed all promises of that array of promises. We skipped resolving outer promise when pending == 1 or 2 or anything other than 0
                 }
             }, reject)
         });
@@ -71,3 +71,14 @@ Promise.all([
 
  Failed: Share the Javascript Interview Questions video
  */
+
+
+ /**
+  * Definition: 
+  *     The Promise.all() method takes an iterable of promises as an input, and 
+  *     returns a single Promise that resolves to an array of the results of the input promises. 
+  *     This returned promise will fulfill when all of the input's promises have fulfilled, 
+  *     or if the input iterable contains no promises. 
+  *     It rejects immediately upon any of the input promises rejecting or non-promises throwing an error, and
+  *     will reject with this first rejection message / error.
+  */
